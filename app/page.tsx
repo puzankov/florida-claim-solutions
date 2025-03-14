@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { CheckCircle, Phone, Mail, ArrowRight, Facebook, Twitter, Instagram, Linkedin, DollarSign } from "lucide-react"
 import Image from "next/image"
@@ -131,7 +129,7 @@ export default function Home() {
               </ul>
               <div className="text-center mt-8">
                 <p className="text-lg font-medium mb-4">
-                  Let us help you claim what's rightfully yours. Check if you're owed money today!
+                  Let us help you claim what&#39;s rightfully yours. Check if you&#39;re owed money today!
                 </p>
                 <Button asChild size="lg">
                   <Link href="#contact">Check for Unclaimed Funds</Link>
@@ -150,7 +148,7 @@ export default function Home() {
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   With years of experience in surplus fund recovery, our team is dedicated to navigating the complex
                   legal process on your behalf, ensuring a smooth and stress-free experience. We work on a no-win,
-                  no-fee basis, meaning you don't pay anything unless we successfully recover your funds.
+                  no-fee basis, meaning you don&#39;t pay anything unless we successfully recover your funds.
                 </p>
               </div>
             </div>
@@ -205,7 +203,7 @@ export default function Home() {
                   <div className="space-y-2 text-center md:text-left">
                     <h3 className="text-xl font-bold">Free Consultation & Agreement</h3>
                     <p className="text-muted-foreground">
-                      We provide a free consultation to explain the process. Once you're ready, you sign a simple
+                      We provide a free consultation to explain the process. Once you&#39;re ready, you sign a simple
                       agreement allowing us to handle the claim on your behalf—with no upfront or out-of-pocket costs to
                       you.
                     </p>
@@ -221,7 +219,7 @@ export default function Home() {
                     <p className="text-muted-foreground">
                       Our team prepares and submits all the necessary paperwork to the appropriate county agency,
                       ensuring compliance with Florida regulations. We handle all correspondence with county officials
-                      and monitor the claim's progress.
+                      and monitor the claim&#39;s progress.
                     </p>
                   </div>
                 </div>
@@ -257,7 +255,7 @@ export default function Home() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Success Stories</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  See how we've helped clients recover their rightful funds.
+                  See how we&#39;ve helped clients recover their rightful funds.
                 </p>
               </div>
             </div>
@@ -280,8 +278,8 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    "I had no idea I was owed money from my foreclosure. Money Claim Solutions found over $45,000 in
-                    surplus funds and handled everything. The process was smooth and professional."
+                    &laquo;I had no idea I was owed money from my foreclosure. Money Claim Solutions found over $45,000 in
+                    surplus funds and handled everything. The process was smooth and professional.&raquo;
                   </p>
                 </div>
                 <div className="mt-4 flex items-center gap-4">
@@ -318,8 +316,8 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    "After my property was sold at auction, I thought that was the end of it. Money Claim Solutions
-                    contacted me and recovered over $30,000 in surplus funds I didn't know existed."
+                    &laquo;After my property was sold at auction, I thought that was the end of it. Money Claim Solutions
+                    contacted me and recovered over $30,000 in surplus funds I didn&#39;t know existed.&raquo;
                   </p>
                 </div>
                 <div className="mt-4 flex items-center gap-4">
@@ -358,7 +356,7 @@ export default function Home() {
             <div className="mx-auto max-w-3xl py-12">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger>How do I know if I'm owed money?</AccordionTrigger>
+                  <AccordionTrigger>How do I know if I&#39;m owed money?</AccordionTrigger>
                   <AccordionContent>
                     If your property was sold at a foreclosure auction for more than what was owed on the mortgage and
                     other liens, you may be entitled to the surplus funds. We can conduct a free search to determine if
@@ -368,7 +366,7 @@ export default function Home() {
                 <AccordionItem value="item-2">
                   <AccordionTrigger>How long does the recovery process take?</AccordionTrigger>
                   <AccordionContent>
-                    The timeline varies depending on the complexity of your case and the court's schedule. Typically,
+                    The timeline varies depending on the complexity of your case and the court&#39;s schedule. Typically,
                     the process takes between 60-120 days from start to finish.
                   </AccordionContent>
                 </AccordionItem>
@@ -389,8 +387,8 @@ export default function Home() {
                 <AccordionItem value="item-5">
                   <AccordionTrigger>What documents will I need to provide?</AccordionTrigger>
                   <AccordionContent>
-                    You'll need to provide identification, proof of ownership of the foreclosed property, and sign our
-                    authorization forms. We'll guide you through exactly what's needed and help you gather any necessary
+                    You&#39;ll need to provide identification, proof of ownership of the foreclosed property, and sign our
+                    authorization forms. We&#39;ll guide you through exactly what&#39;s needed and help you gather any necessary
                     documentation.
                   </AccordionContent>
                 </AccordionItem>

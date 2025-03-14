@@ -6,10 +6,7 @@ import {Textarea} from "@/components/ui/textarea";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 
-interface Props {
-}
-
-const ContactForm = ({}: Props) => {
+const ContactForm = () => {
   const [result, setResult] = useState('');
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -38,6 +35,7 @@ const ContactForm = ({}: Props) => {
 
   return <>
     <h3 className="text-xl font-bold mb-4">Request Free Consultation</h3>
+    {result && (<div>Your request sent!</div>)}
     <form className="space-y-4" onSubmit={onSubmit}>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="space-y-2">
