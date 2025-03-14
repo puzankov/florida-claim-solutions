@@ -1,9 +1,20 @@
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { CheckCircle, Phone, Mail, ArrowRight, Facebook, Twitter, Instagram, Linkedin, DollarSign } from "lucide-react"
+import {
+  CheckCircle,
+  Phone,
+  Mail,
+  ArrowRight,
+  DollarSign,
+  MapPin
+} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import ContactForm from "@/components/ui/ContactForm";
+
+const COMPANY_EMAIL = 'info@moneyclaimsolutions.com';
+const COMPANY_PHONE = '(239) 314-7687';
+const COMPANY_PHONE_LINK = 'tel:+12393147687';
 
 export default function Home() {
   return (
@@ -17,7 +28,7 @@ export default function Home() {
             </div>
             <span className="text-xl font-bold">Money Claim Solutions</span>
           </div>
-          <nav className="hidden md:flex gap-6">
+          <nav className="hidden lg:flex gap-6">
             <Link href="#about" className="text-sm font-medium hover:text-primary">
               About Us
             </Link>
@@ -34,40 +45,27 @@ export default function Home() {
               Contact
             </Link>
           </nav>
+          <div className="flex items-center gap-2 text-primary">
+            <Phone className="h-4 w-4" />
+            <a href={COMPANY_PHONE_LINK} className="text-sm font-medium hover:underline">
+              {COMPANY_PHONE}
+            </a>
+          </div>
           <Button asChild className="hidden md:inline-flex">
             <Link href="#contact">Free Consultation</Link>
-          </Button>
-          <Button variant="outline" size="icon" className="md:hidden">
-            <span className="sr-only">Toggle menu</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6"
-            >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
           </Button>
         </div>
       </header>
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-blue-50 to-white">
+        <section className="relative w-full py-12 md:py-24 bg-gradient-to-b from-blue-50 to-white">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                    Recover Your Unclaimed Surplus Funds – Fast & Hassle-Free
+                    Recover Your Unclaimed Surplus Funds<br/>Fast & Hassle-Free
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
                     We help homeowners and individuals claim the money that rightfully belongs to them.
@@ -94,7 +92,7 @@ export default function Home() {
         </section>
 
         {/* About Us */}
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="about" className="w-full pb-12 md:pb-24">
           <div className="container px-4 md:px-6">
             <div className="mx-auto max-w-3xl py-12">
               <h2 className="text-3xl font-bold text-center tracking-tighter sm:text-4xl md:text-5xl mb-6">Why Choose Us?</h2>
@@ -410,18 +408,28 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2">
               <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
+                <h3 className="text-xl font-bold">Contacts</h3>
+                <div className="flex items-center gap-2 text-primary">
                   <Phone className="h-5 w-5 text-primary" />
-                  <a href="tel:+18001234567" className="text-lg font-medium hover:underline">
-                    (800) 123-4567
+                  <a href={COMPANY_PHONE_LINK} className="text-lg font-medium hover:underline">
+                    {COMPANY_PHONE}
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-primary">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <a href={`mailto:${COMPANY_EMAIL}`} className="text-lg font-medium hover:underline">
+                    {COMPANY_EMAIL}
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <a href="mailto:info@moneyclaimsolutions.com" className="text-lg font-medium hover:underline">
-                    info@moneyclaimsolutions.com
-                  </a>
+                  <MapPin className="h-5 w-5 text-primary mt-0.5" />
+                  <address className="not-italic text-lg font-medium">
+                    12632 East Tamiami Trail #1029
+                    <br />
+                    Naples, FL 34113
+                  </address>
                 </div>
+
                 <div className="mt-8 space-y-4">
                   <h3 className="text-xl font-bold">Why Contact Us Today?</h3>
                   <ul className="space-y-2">
@@ -447,6 +455,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </div>
+
               </div>
               <div className="rounded-lg border bg-card p-6 shadow-sm">
                 <ContactForm/>
@@ -470,33 +479,36 @@ export default function Home() {
               &copy; {new Date().getFullYear()} Money Claim Solutions. All rights reserved.
             </p>
           </div>
-          <div className="flex gap-4">
-            <Link href="#" className="text-muted-foreground hover:text-foreground">
-              <Facebook className="h-5 w-5" />
-              <span className="sr-only">Facebook</span>
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground">
-              <Twitter className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground">
-              <Instagram className="h-5 w-5" />
-              <span className="sr-only">Instagram</span>
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground">
-              <Linkedin className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
+          <div className="flex items-center gap-4 text-primary">
+            <Phone className="h-4 w-4" />
+            <a href={COMPANY_PHONE_LINK} className="text-lg font-medium hover:underline">
+              {COMPANY_PHONE}
+            </a>
           </div>
+          {/*<div className="flex gap-4">*/}
+          {/*  <Link href="#" className="text-muted-foreground hover:text-foreground">*/}
+          {/*    <Facebook className="h-5 w-5" />*/}
+          {/*    <span className="sr-only">Facebook</span>*/}
+          {/*  </Link>*/}
+          {/*  <Link href="#" className="text-muted-foreground hover:text-foreground">*/}
+          {/*    <Twitter className="h-5 w-5" />*/}
+          {/*    <span className="sr-only">Twitter</span>*/}
+          {/*  </Link>*/}
+          {/*  <Link href="#" className="text-muted-foreground hover:text-foreground">*/}
+          {/*    <Instagram className="h-5 w-5" />*/}
+          {/*    <span className="sr-only">Instagram</span>*/}
+          {/*  </Link>*/}
+          {/*  <Link href="#" className="text-muted-foreground hover:text-foreground">*/}
+          {/*    <Linkedin className="h-5 w-5" />*/}
+          {/*    <span className="sr-only">LinkedIn</span>*/}
+          {/*  </Link>*/}
+          {/*</div>*/}
           <nav className="flex gap-4 md:gap-6">
             <Link href="#" className="text-xs hover:underline underline-offset-4">
               Privacy Policy
             </Link>
             <Link href="#" className="text-xs hover:underline underline-offset-4">
               Terms of Service
-            </Link>
-            <Link href="#" className="text-xs hover:underline underline-offset-4">
-              Contact Us
             </Link>
           </nav>
         </div>
