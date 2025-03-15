@@ -5,12 +5,12 @@ import {
   Phone,
   Mail,
   ArrowRight,
-  DollarSign,
   MapPin
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import ContactForm from "@/components/ui/ContactForm";
+import Logo from "@/components/ui/Logo";
 
 const COMPANY_EMAIL = 'info@moneyclaimsolutions.com';
 const COMPANY_PHONE = '(239) 314-7687';
@@ -23,8 +23,8 @@ export default function Home() {
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-              <DollarSign className="h-6 w-6" />
+            <div className="h-10 w-10 flex items-center justify-center text-primary">
+              <Logo/>
             </div>
             <span className="text-xl font-bold">Money Claim Solutions</span>
           </div>
@@ -79,7 +79,7 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-center">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/94e182ce-c91f-4936-9522-290a02549e98-Lc3S05A63tAgDoepeLeXDCqCF2lvuM.webp"
+                  src="/images/hero.webp"
                   alt="Money and house model representing surplus funds recovery"
                   width={800}
                   height={533}
@@ -101,7 +101,7 @@ export default function Home() {
                   <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-lg">
                     <span className="font-semibold">Expertise & Experience</span> – We understand the legal system and
-                    work efficiently to recover your funds.
+                    work efficiently with county to recover your funds.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -470,8 +470,8 @@ export default function Home() {
         <div className="container flex flex-col items-center justify-between gap-4 md:flex-row px-4 md:px-6">
           <div className="flex flex-col items-center gap-2 md:items-start md:gap-1">
             <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                <DollarSign className="h-5 w-5" />
+              <div className="h-8 w-8 flex items-center justify-center text-primary">
+                <Logo/>
               </div>
               <span className="text-lg font-bold">Money Claim Solutions</span>
             </div>
