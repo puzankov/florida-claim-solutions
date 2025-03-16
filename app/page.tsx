@@ -46,7 +46,7 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-2 text-primary">
-            <Phone className="h-4 w-4" />
+            <Phone className="h-4 w-4 hidden md:inline-flex" />
             <a href={COMPANY_PHONE_LINK} className="text-sm font-medium hover:underline whitespace-nowrap">
               {COMPANY_PHONE}
             </a>
