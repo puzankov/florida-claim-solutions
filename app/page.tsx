@@ -26,7 +26,7 @@ export default function Home() {
             <div className="h-10 w-10 flex items-center justify-center text-primary">
               <Logo/>
             </div>
-            <span className="text-xl font-bold">Money Claim Solutions</span>
+            <span className="text-xl font-bold whitespace-nowrap">Money Claim Solutions</span>
           </div>
           <nav className="hidden lg:flex gap-6">
             <Link href="#about" className="text-sm font-medium hover:text-primary">
@@ -47,7 +47,7 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-2 text-primary">
             <Phone className="h-4 w-4" />
-            <a href={COMPANY_PHONE_LINK} className="text-sm font-medium hover:underline">
+            <a href={COMPANY_PHONE_LINK} className="text-sm font-medium hover:underline whitespace-nowrap">
               {COMPANY_PHONE}
             </a>
           </div>
