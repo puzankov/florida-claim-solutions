@@ -246,8 +246,47 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Meet the Founder */}
+        <section id="founder" className="w-full py-12 md:py-24">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meet Sergio Puzankov</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Founder of Money Claim Solutions
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto max-w-5xl py-12">
+              <div className="grid gap-12 lg:grid-cols-2 items-center">
+                <div className="space-y-4 text-center lg:text-left">
+                  <p className="text-lg">
+                    I&#39;m Sergio Puzankov, the founder of Money Claim Solutions.
+                    I started this company with one goal in mind: to make surplus fund recovery simple, transparent, and
+                    stress-free. I&#39;ve built a trusted network of legal and financial professionals to ensure every claim
+                    is handled efficiently, giving my clients the best chance to recover their funds.
+                  </p>
+                  <p className="text-lg">
+                    At Money Claim Solutions, we believe in honesty, integrity, and results. If you think you may be
+                    owed money, I&#39;d love to help. Let&#39;s get started today!
+                  </p>
+                </div>
+                <div className="flex justify-center lg:justify-start">
+                  <Image
+                    src="/images/sergi.png"
+                    alt="Sergio Puzankov, Founder of Money Claim Solutions"
+                    width={400}
+                    height={500}
+                    className="rounded-lg shadow-lg object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Testimonials */}
-        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="testimonials" className="w-full py-12 md:py-24 bg-muted">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -283,7 +322,7 @@ export default function Home() {
                 <div className="mt-4 flex items-center gap-4">
                   <div className="rounded-full bg-muted p-1">
                     <Image
-                      src="/placeholder.svg?height=40&width=40"
+                      src="/images/avatar2.png"
                       alt="Client"
                       width={40}
                       height={40}
@@ -315,13 +354,13 @@ export default function Home() {
                   </div>
                   <p className="text-muted-foreground">
                     &laquo;After my property was sold at auction, I thought that was the end of it. Money Claim Solutions
-                    contacted me and recovered over $30,000 in surplus funds I didn&#39;t know existed.&raquo;
+                    contacted me and recovered $31,252 in surplus funds I didn&#39;t know existed.&raquo;
                   </p>
                 </div>
                 <div className="mt-4 flex items-center gap-4">
                   <div className="rounded-full bg-muted p-1">
                     <Image
-                      src="/placeholder.svg?height=40&width=40"
+                      src="/images/avatar1.png"
                       alt="Client"
                       width={40}
                       height={40}
@@ -339,7 +378,7 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section id="faq" className="w-full py-12 md:py-24">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -351,8 +390,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto max-w-3xl py-12">
-              <Accordion type="single" collapsible className="w-full">
+            <div className="mx-auto max-w-3xl py-12 text-lg">
+              <Accordion type="single" collapsible className="w-full text-lg">
                 <AccordionItem value="item-1">
                   <AccordionTrigger>How do I know if I&#39;m owed money?</AccordionTrigger>
                   <AccordionContent>
@@ -396,7 +435,7 @@ export default function Home() {
         </section>
 
         {/* Contact / Get Started */}
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="contact" className="w-full py-12 md:py-24 bg-muted">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
