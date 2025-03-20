@@ -10,52 +10,15 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import ContactForm from "@/components/ui/ContactForm";
-import Logo from "@/components/ui/Logo";
-
-const COMPANY_EMAIL = 'info@moneyclaimsolutions.com';
-const COMPANY_PHONE = '(239) 314-7687';
-const COMPANY_PHONE_LINK = 'tel:+12393147687';
+import Footer from "@/components/ui/Footer";
+import Header from "@/components/ui/Header";
+import {COMPANY_PHONE_LINK,COMPANY_PHONE, COMPANY_EMAIL} from "@/components/ui/constants";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Header/Navigation */}
-      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="h-10 w-10 flex items-center justify-center text-primary">
-              <Logo/>
-            </div>
-            <span className="text-xl font-bold whitespace-nowrap">Money Claim Solutions</span>
-          </div>
-          <nav className="hidden lg:flex gap-6">
-            <Link href="#about" className="text-sm font-medium hover:text-primary">
-              About Us
-            </Link>
-            <Link href="#how-it-works" className="text-sm font-medium hover:text-primary">
-              How It Works
-            </Link>
-            <Link href="#testimonials" className="text-sm font-medium hover:text-primary">
-              Testimonials
-            </Link>
-            <Link href="#faq" className="text-sm font-medium hover:text-primary">
-              FAQ
-            </Link>
-            <Link href="#contact" className="text-sm font-medium hover:text-primary">
-              Contact
-            </Link>
-          </nav>
-          <div className="flex items-center gap-2 text-primary">
-            <Phone className="h-4 w-4 hidden md:inline-flex" />
-            <a href={COMPANY_PHONE_LINK} className="text-sm font-medium hover:underline whitespace-nowrap">
-              {COMPANY_PHONE}
-            </a>
-          </div>
-          <Button asChild className="hidden md:inline-flex">
-            <Link href="#contact">Free Consultation</Link>
-          </Button>
-        </div>
-      </header>
+
+      <Header isMainPage={true}/>
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -273,10 +236,10 @@ export default function Home() {
                 </div>
                 <div className="flex justify-center lg:justify-start">
                   <Image
-                    src="/images/sergi.png"
+                    src="/images/sergi2.png"
                     alt="Sergio Puzankov, Founder of Money Claim Solutions"
-                    width={400}
-                    height={500}
+                    width={350}
+                    height={377}
                     className="rounded-lg shadow-lg object-cover"
                   />
                 </div>
@@ -504,54 +467,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="w-full border-t py-6 md:py-8">
-        <div className="container flex flex-col items-center justify-between gap-4 md:flex-row px-4 md:px-6">
-          <div className="flex flex-col items-center gap-2 md:items-start md:gap-1">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 flex items-center justify-center text-primary">
-                <Logo/>
-              </div>
-              <span className="text-lg font-bold">Money Claim Solutions</span>
-            </div>
-            <p className="text-xs text-muted-foreground md:text-left">
-              &copy; {new Date().getFullYear()} Money Claim Solutions. All rights reserved.
-            </p>
-          </div>
-          <div className="flex items-center gap-4 text-primary">
-            <Phone className="h-4 w-4" />
-            <a href={COMPANY_PHONE_LINK} className="text-lg font-medium hover:underline">
-              {COMPANY_PHONE}
-            </a>
-          </div>
-          {/*<div className="flex gap-4">*/}
-          {/*  <Link href="#" className="text-muted-foreground hover:text-foreground">*/}
-          {/*    <Facebook className="h-5 w-5" />*/}
-          {/*    <span className="sr-only">Facebook</span>*/}
-          {/*  </Link>*/}
-          {/*  <Link href="#" className="text-muted-foreground hover:text-foreground">*/}
-          {/*    <Twitter className="h-5 w-5" />*/}
-          {/*    <span className="sr-only">Twitter</span>*/}
-          {/*  </Link>*/}
-          {/*  <Link href="#" className="text-muted-foreground hover:text-foreground">*/}
-          {/*    <Instagram className="h-5 w-5" />*/}
-          {/*    <span className="sr-only">Instagram</span>*/}
-          {/*  </Link>*/}
-          {/*  <Link href="#" className="text-muted-foreground hover:text-foreground">*/}
-          {/*    <Linkedin className="h-5 w-5" />*/}
-          {/*    <span className="sr-only">LinkedIn</span>*/}
-          {/*  </Link>*/}
-          {/*</div>*/}
-          <nav className="flex gap-4 md:gap-6">
-            <Link href="#" className="text-xs hover:underline underline-offset-4">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="text-xs hover:underline underline-offset-4">
-              Terms of Service
-            </Link>
-          </nav>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   )
 }

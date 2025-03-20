@@ -6,6 +6,7 @@ import {Textarea} from "@/components/ui/textarea";
 import {Button} from "@/components/ui/button";
 import {SubmitHandler, useForm} from "react-hook-form";
 import HCaptcha from '@hcaptcha/react-hcaptcha';
+import Link from "next/link";
 
 type Inputs = {
   firstname: string;
@@ -16,6 +17,7 @@ type Inputs = {
   subject: string;
   access_key: string;
   "h-captcha-response": string;
+  "opt-in": boolean;
 }
 
 const ContactForm = () => {
@@ -144,6 +146,27 @@ const ContactForm = () => {
           {...register("message")}
         />
       </div>
+      {/* Add the opt-in checkbox here */}
+      <div className="flex items-start gap-2 mt-4 mb-2">
+        <input
+          type="checkbox"
+          id="opt-in"
+          {...register("opt-in")}
+          className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+        />
+        <label htmlFor="opt-in" className="text-sm text-muted-foreground">
+          Opt-in for Messages and Email Communication
+          <p className="text-xs mt-1">
+            I agree to receive SMS and email communications from Money&nbsp;Claim&nbsp;Solutions in
+            accordance with our{" "}
+            <Link href="/privacy/" target="_blank" className="text-primary hover:underline">
+              Privacy Policy
+            </Link>.<br/>
+            Standard messaging rates may apply.
+          </p>
+        </label>
+      </div>
+
       <div className="space-y-2">
         <HCaptcha
           sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
