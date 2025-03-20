@@ -1,4 +1,4 @@
-import {Mail} from "lucide-react";
+import {CheckCircle, Mail, XCircle} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {COMPANY_EMAIL} from "@/components/ui/constants";
@@ -34,15 +34,15 @@ const TermsAndConditions = () => {
             <p>By engaging with our services, you agree to:</p>
             <ul className="space-y-2 my-4">
               <li className="flex items-start gap-2">
-                <span className="text-primary text-lg">✅</span>
+                <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span>Provide accurate and complete information regarding your foreclosure case.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-primary text-lg">✅</span>
+                <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span>Cooperate with our team by signing necessary documents and providing requested details.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-primary text-lg">✅</span>
+                <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span>
                     Understand that fund recovery is subject to legal processes and timeframes set by relevant
                     authorities.
@@ -73,15 +73,15 @@ const TermsAndConditions = () => {
             <p>We reserve the right to terminate services if:</p>
             <ul className="space-y-2 my-4">
               <li className="flex items-start gap-2">
-                <span className="text-destructive text-lg">❌</span>
+                <XCircle className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
                 <span>A client provides false or misleading information.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-destructive text-lg">❌</span>
+                <XCircle className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
                 <span>A client refuses to cooperate in the claims process.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-destructive text-lg">❌</span>
+                <XCircle className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
                 <span>We determine that a case is not eligible for recovery.</span>
               </li>
             </ul>
