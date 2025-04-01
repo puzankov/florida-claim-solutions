@@ -18,6 +18,7 @@ type Inputs = {
   access_key: string;
   "h-captcha-response": string;
   "opt-in": boolean;
+  "opt-in2": boolean;
 }
 
 const ContactForm = () => {
@@ -74,7 +75,6 @@ const ContactForm = () => {
             id="first-name"
             placeholder="Enter your first name"
             {...register("firstname", {
-              required: "First name is required",
               maxLength: 40,
             })}
           />
@@ -90,7 +90,6 @@ const ContactForm = () => {
             id="last-name"
             placeholder="Enter your last name"
             {...register("lastname", {
-              required: "Last name is required",
               maxLength: 40,
             })}
           />
@@ -101,7 +100,7 @@ const ContactForm = () => {
           htmlFor="email"
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
-          Email
+          Email *
         </label>
         <Input
           id="email"
@@ -128,7 +127,6 @@ const ContactForm = () => {
           type="tel"
           placeholder="Enter your phone number"
           {...register("phone", {
-            required: "Phone is required",
             maxLength: 20,
           })}
         />
@@ -138,7 +136,7 @@ const ContactForm = () => {
           htmlFor="message"
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
-          Message (Optional)
+          Message
         </label>
         <Textarea
           id="message"
@@ -155,16 +153,36 @@ const ContactForm = () => {
           className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
         />
         <label htmlFor="opt-in" className="text-sm text-muted-foreground">
-          Opt-in for Messages and Email Communication
+          {/*Opt-in for Messages and Email Communication*/}
           <p className="text-xs mt-1">
-            I agree to receive SMS and email communications from Money&nbsp;Claim&nbsp;Solutions in
-            accordance with our{" "}
-            <Link href="/privacy/" target="_blank" className="text-primary hover:underline">
-              Privacy Policy
-            </Link>.<br/>
-            Standard messaging rates may apply.
+            I consent to receive marketing text messages from Money&nbsp;Claim&nbsp;Solutions at the phone number provided.
+            Frequency may vary. Message & data rates may apply. Text HELP for assistance, reply STOP to opt out.
           </p>
         </label>
+      </div>
+
+      <div className="flex items-start gap-2 mt-4 mb-2">
+        <input
+          type="checkbox"
+          id="opt-in2"
+          {...register("opt-in2")}
+          className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+        />
+        <label htmlFor="opt-in2" className="text-sm text-muted-foreground">
+          {/*Opt-in for Messages and Email Communication*/}
+          <p className="text-xs mt-1">
+            I consent to receive non-marketing text messages from Money&nbsp;Claim&nbsp;Solutions about my request updates, meeting reminders etc. Message & data rates may apply.
+          </p>
+        </label>
+      </div>
+
+      <div className="flex items-start gap-2 mt-4 mb-2 text-sm">
+        <Link href="/privacy/" target="_blank" className="text-primary hover:underline">
+          Privacy Policy
+        </Link> |
+        <Link href="/terms-and-conditions/" target="_blank" className="text-primary hover:underline">
+          Terms of Service
+        </Link>
       </div>
 
       <div className="space-y-2">

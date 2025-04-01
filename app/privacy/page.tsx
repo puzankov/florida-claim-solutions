@@ -17,7 +17,7 @@ const Privacy = () => {
 
           <div className="prose prose-blue max-w-none">
             <p className="text-lg">
-              Money Claim Solutions respects your privacy. By opting into our SMS messaging service, you agree to the
+              Marco Concept LLC d/b/a Money Claim Solutions respects your privacy. By opting into our SMS messaging service, you agree to the
               following terms regarding how we handle your data.
             </p>
 

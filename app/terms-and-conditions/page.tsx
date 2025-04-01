@@ -18,7 +18,7 @@ const TermsAndConditions = () => {
 
           <div className="prose prose-blue max-w-none">
             <p className="text-lg">
-              Welcome to Money Claim Solutions. These Terms and Conditions outline the rules and regulations for using
+              Welcome to Money Claim Solutions (Marco Concept LLC). These Terms and Conditions outline the rules and regulations for using
               our services. By accessing our website and utilizing our services, you agree to the following terms. If
               you do not agree with any part of these terms, please refrain from using our services.
             </p>
