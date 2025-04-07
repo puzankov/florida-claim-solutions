@@ -102,7 +102,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-center mb-6">About Us</h3>
               <div className="space-y-2">
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  At Money Claim Solutions, we specialize in helping individuals reclaim surplus funds that are
+                  At Florida Claim Solutions, we specialize in helping individuals reclaim surplus funds that are
                   rightfully theirs. Every year, millions of dollars go unclaimed after property sales, foreclosures,
                   and tax overpayments—money that should be in the hands of those who deserve it.
                 </p>
@@ -216,7 +216,7 @@ export default function Home() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meet Sergio Puzankov</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Founder of Money Claim Solutions
+                  Founder of Florida Claim Solutions
                 </p>
               </div>
             </div>
@@ -224,20 +224,20 @@ export default function Home() {
               <div className="grid gap-12 lg:grid-cols-2 items-center">
                 <div className="space-y-4 text-center lg:text-left">
                   <p className="text-lg">
-                    I&#39;m Sergio Puzankov, the founder of Money Claim Solutions.
+                    I&#39;m Sergio Puzankov, the founder of Florida Claim Solutions.
                     I started this company with one goal in mind: to make surplus fund recovery simple, transparent, and
                     stress-free. I&#39;ve built a trusted network of legal and financial professionals to ensure every claim
                     is handled efficiently, giving my clients the best chance to recover their funds.
                   </p>
                   <p className="text-lg">
-                    At Money Claim Solutions, we believe in honesty, integrity, and results. If you think you may be
+                    At Florida Claim Solutions, we believe in honesty, integrity, and results. If you think you may be
                     owed money, I&#39;d love to help. Let&#39;s get started today!
                   </p>
                 </div>
                 <div className="flex justify-center lg:justify-start">
                   <Image
                     src="/images/sergi2.png"
-                    alt="Sergio Puzankov, Founder of Money Claim Solutions"
+                    alt="Sergio Puzankov, Founder of Florida Claim Solutions"
                     width={350}
                     height={377}
                     className="rounded-lg shadow-lg object-cover"
@@ -278,7 +278,7 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    &laquo;I had no idea I was owed money from my foreclosure. Money Claim Solutions found over $45,000 in
+                    &laquo;I had no idea I was owed money from my foreclosure. Florida Claim Solutions found over $45,000 in
                     surplus funds and handled everything. The process was smooth and professional.&raquo;
                   </p>
                 </div>
@@ -316,7 +316,7 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    &laquo;After my property was sold at auction, I thought that was the end of it. Money Claim Solutions
+                    &laquo;After my property was sold at auction, I thought that was the end of it. Florida Claim Solutions
                     contacted me and recovered $31,252 in surplus funds I didn&#39;t know existed.&raquo;
                   </p>
                 </div>

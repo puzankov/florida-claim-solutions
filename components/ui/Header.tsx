@@ -17,7 +17,7 @@ const Header = ({isMainPage}: Props) => {
           <div className="h-10 w-10 sm:w-8 sm:h-8 flex items-center justify-center text-primary">
             <Logo/>
           </div>
-          <span className="text-xl font-bold whitespace-nowrap">Money Claim Solutions</span>
+          <span className="text-xl font-bold whitespace-nowrap">Florida Claim Solutions</span>
         </Link>
         {isMainPage && (<nav className="hidden lg:flex gap-6">
           <Link href="#about" className="text-sm font-medium hover:text-primary">

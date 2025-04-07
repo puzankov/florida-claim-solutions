@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Money Claim Solutions | Surplus Funds Recovery in Florida",
-  description: "Money Claim Solutions helps homeowners recover surplus funds from tax sales and foreclosures in Florida. No upfront costs. Find out if you're owed money today!",
+  title: "Florida Claim Solutions | Surplus Funds Recovery in Florida",
+  description: "Florida Claim Solutions helps homeowners recover surplus funds from tax sales and foreclosures in Florida. No upfront costs. Find out if you're owed money today!",
 };
 
 export default function RootLayout({

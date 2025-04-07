@@ -17,7 +17,7 @@ const Privacy = () => {
 
           <div className="prose prose-blue max-w-none">
             <p className="text-lg">
-              Marco Concept LLC d/b/a Money Claim Solutions respects your privacy. By opting into our SMS messaging service, you agree to the
+              Marco Concept LLC d/b/a Florida Claim Solutions respects your privacy. By opting into our SMS messaging service, you agree to the
               following terms regarding how we handle your data.
             </p>
 
@@ -53,7 +53,7 @@ const Privacy = () => {
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Contact Information</h2>
             <p>
-              For assistance, contact Money Claim Solutions at{" "}
+              For assistance, contact Florida Claim Solutions at{" "}
               <a href={`mailto:${COMPANY_EMAIL}`} className="text-primary hover:underline">
                 {COMPANY_EMAIL}
               </a>
