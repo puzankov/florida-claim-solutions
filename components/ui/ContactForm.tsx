@@ -155,7 +155,7 @@ const ContactForm = () => {
         <label htmlFor="opt-in" className="text-sm text-muted-foreground">
           {/*Opt-in for Messages and Email Communication*/}
           <p className="text-xs mt-1">
-            I consent to receive marketing text messages from Money&nbsp;Claim&nbsp;Solutions at the phone number provided.
+            I consent to receive marketing text messages from Florida&nbsp;Claim&nbsp;Solutions at the phone number provided.
             Frequency may vary. Message & data rates may apply. Text HELP for assistance, reply STOP to opt out.
           </p>
         </label>
@@ -171,7 +171,7 @@ const ContactForm = () => {
         <label htmlFor="opt-in2" className="text-sm text-muted-foreground">
           {/*Opt-in for Messages and Email Communication*/}
           <p className="text-xs mt-1">
-            I consent to receive non-marketing text messages from Money&nbsp;Claim&nbsp;Solutions about my request updates, meeting reminders etc. Message & data rates may apply.
+            I consent to receive non-marketing text messages from Florida&nbsp;Claim&nbsp;Solutions about my request updates, meeting reminders etc. Message & data rates may apply.
           </p>
         </label>
       </div>
