@@ -13,10 +13,10 @@ const Footer = () => {
             <div className="h-8 w-8 flex items-center justify-center text-primary">
               <Logo/>
             </div>
-            <span className="text-lg font-bold">Money Claim Solutions</span>
+            <span className="text-lg font-bold">Florida Claim Solutions</span>
           </div>
           <p className="text-xs text-muted-foreground md:text-left">
-            &copy; {new Date().getFullYear()} Marco Concept LLC <br/>d/b/a Money Claim Solutions. All rights reserved.
+            &copy; {new Date().getFullYear()} Marco Concept LLC <br/>d/b/a Florida Claim Solutions. All rights reserved.
           </p>
         </div>
         <div className="flex items-center gap-4 text-primary">

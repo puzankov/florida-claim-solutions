@@ -18,14 +18,14 @@ const TermsAndConditions = () => {
 
           <div className="prose prose-blue max-w-none">
             <p className="text-lg">
-              Welcome to Money Claim Solutions (Marco Concept LLC). These Terms and Conditions outline the rules and regulations for using
+              Welcome to Florida Claim Solutions (Marco Concept LLC). These Terms and Conditions outline the rules and regulations for using
               our services. By accessing our website and utilizing our services, you agree to the following terms. If
               you do not agree with any part of these terms, please refrain from using our services.
             </p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">1. Services Provided</h2>
             <p>
-              Money Claim Solutions assists homeowners in recovering surplus funds resulting from foreclosure sales.
+              Florida Claim Solutions assists homeowners in recovering surplus funds resulting from foreclosure sales.
               Our services operate on a contingency basis, meaning clients do not pay upfront fees—our fee is only
               deducted from successfully recovered funds.
             </p>
@@ -52,7 +52,7 @@ const TermsAndConditions = () => {
 
             <h2 className="text-2xl font-bold mt-8 mb-4">3. No Guarantee of Recovery</h2>
             <p>
-              While we strive to recover funds on your behalf, Money Claim Solutions does not guarantee the success of
+              While we strive to recover funds on your behalf, Florida Claim Solutions does not guarantee the success of
               any claim. Recovery is subject to legal procedures, agency decisions, and case-specific circumstances.
             </p>
 
@@ -65,7 +65,7 @@ const TermsAndConditions = () => {
 
             <h2 className="text-2xl font-bold mt-8 mb-4">5. Limitation of Liability</h2>
             <p>
-              Money Claim Solutions is not liable for any losses, damages, or delays resulting from external factors,
+              Florida Claim Solutions is not liable for any losses, damages, or delays resulting from external factors,
               including court decisions, government processing times, or incorrect information provided by the client.
             </p>
 
@@ -88,7 +88,7 @@ const TermsAndConditions = () => {
 
             <h2 className="text-2xl font-bold mt-8 mb-4">7. Modifications to Terms</h2>
             <p>
-              Money Claim Solutions may update these Terms and Conditions at any time. Any changes will be reflected
+              Florida Claim Solutions may update these Terms and Conditions at any time. Any changes will be reflected
               on this page, and continued use of our services constitutes acceptance of the updated terms.
             </p>
 
