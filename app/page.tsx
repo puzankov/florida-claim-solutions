@@ -9,11 +9,11 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import ContactForm from "@/components/ui/ContactForm";
-import Footer from "@/components/ui/Footer";
-import Header from "@/components/ui/Header";
+import ContactForm from "@/components/ui/main/ContactForm";
+import Footer from "@/components/ui/main/Footer";
+import Header from "@/components/ui/main/Header";
 import {COMPANY_PHONE_LINK,COMPANY_PHONE, COMPANY_EMAIL} from "@/components/ui/constants";
-import Counties from "@/components/ui/Counties";
+import Counties from "@/components/ui/main/Counties";
 
 export default function Home() {
   return (
