@@ -2,8 +2,8 @@ import {CheckCircle, Mail, XCircle} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {COMPANY_EMAIL} from "@/components/ui/constants";
-import Header from "@/components/ui/Header";
-import Footer from "@/components/ui/Footer";
+import Header from "@/components/ui/main/Header";
+import Footer from "@/components/ui/main/Footer";
 
 const TermsAndConditions = () => {
   return <>
