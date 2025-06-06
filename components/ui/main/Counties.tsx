@@ -11,9 +11,7 @@ const Counties = () => {
   // Filter counties based on search term
   const filteredCounties: string[] = floridaCounties.filter((county) => county.toLowerCase().includes(searchTerm.toLowerCase()));
 
-  return <>
-    {/* Florida Counties Section */}
-    <section id="counties" className="w-full py-12 md:py-24">
+  return <section id="counties" className="w-full py-12 md:py-24">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -103,8 +101,7 @@ const Counties = () => {
 
         </div>
       </div>
-    </section>
-  </>;
+    </section>;
 };
 
 export default Counties;
