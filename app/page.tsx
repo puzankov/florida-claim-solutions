@@ -13,6 +13,7 @@ import ContactForm from "@/components/ui/ContactForm";
 import Footer from "@/components/ui/Footer";
 import Header from "@/components/ui/Header";
 import {COMPANY_PHONE_LINK,COMPANY_PHONE, COMPANY_EMAIL} from "@/components/ui/constants";
+import Counties from "@/components/ui/Counties";
 
 export default function Home() {
   return (
@@ -466,6 +467,8 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <Counties/>
 
       <Footer/>
     </div>
