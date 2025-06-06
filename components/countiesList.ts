@@ -1,5 +1,5 @@
 // Florida counties data
-const floridaCounties: string[] = [
+export const floridaCounties: string[] = [
   "Alachua",
   "Baker",
   "Bay",
@@ -67,6 +67,19 @@ const floridaCounties: string[] = [
   "Wakulla",
   "Walton",
   "Washington",
-]
+];
 
-export default floridaCounties;
+export const countiesIds: string[] = floridaCounties.map(county =>
+  county.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '')
+);
+
+export const countyMap: { [key: string]: string } = floridaCounties.reduce((acc, county) => {
+  const id = county.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '');
+  acc[id] = county;
+  return acc;
+}, {} as { [key: string]: string });
+
+export const getCountyName = (id: string, withCounty: boolean = false): string => {
+  const countyName = countyMap[id];
+  return countyName ? (withCounty ? `${countyName} County` : countyName) : '';
+};

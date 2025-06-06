@@ -1,6 +1,6 @@
 "use client";
 
-import floridaCounties from "@/components/countiesList"
+import {countiesIds, getCountyName} from "@/components/countiesList"
 import {useState} from "react";
 import {Input} from "@/components/ui/input";
 
@@ -9,7 +9,7 @@ const Counties = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   // Filter counties based on search term
-  const filteredCounties: string[] = floridaCounties.filter((county) => county.toLowerCase().includes(searchTerm.toLowerCase()));
+  const filteredCounties: string[] = countiesIds.filter((countyId) => getCountyName(countyId).toLowerCase().includes(searchTerm.toLowerCase()));
 
   return <section id="counties" className="w-full py-12 md:py-24">
       <div className="container px-4 md:px-6">
@@ -81,15 +81,15 @@ const Counties = () => {
           {/* Counties Grid - Scrollable on mobile */}
           <div className="max-h-[400px] overflow-y-auto pr-1 pb-2 md:max-h-none md:overflow-visible">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
-              {filteredCounties.map((county, index) => (
+              {filteredCounties.map((countyId, index) => (
                 <a
-                  key={county}
+                  key={countyId}
                   className="group relative p-2 rounded-lg border bg-card hover:bg-primary/5 border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg text-left"
-                  href="#"
+                  href={`/county/${countyId}`}
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300 text-sm">
-                    {county}
+                    {getCountyName(countyId)}
                   </h3>
 
                   {/* Hover effect overlay */}
