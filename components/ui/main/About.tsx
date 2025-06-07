@@ -1,11 +1,13 @@
 import {CheckCircle} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
+import {getCountyName} from "@/components/countiesList";
 
 interface Props {
+  county?: string;
 }
 
-const About = ({}: Props) => {
+const About = ({county}: Props) => {
   return <section id="about" className="w-full pb-12 md:pb-24">
     <div className="container px-4 md:px-6">
       <div className="mx-auto max-w-3xl py-12">
@@ -15,8 +17,10 @@ const About = ({}: Props) => {
           <li className="flex items-start gap-3">
             <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0"/>
             <span className="text-lg">
-                    <span className="font-semibold">Expertise & Experience</span> – We understand the legal system and
-                    work efficiently with county to recover your funds.
+                    <span className="font-semibold">Expertise & Experience</span> –
+                  {county ?
+                      `We know how the ${getCountyName(county, true)} system works and partner with legal professionals to recover your surplus funds fast.` :
+                      'We understand Florida’s legal system and work efficiently with counties across the state to recover your funds.'}
                   </span>
           </li>
           <li className="flex items-start gap-3">
@@ -42,7 +46,7 @@ const About = ({}: Props) => {
         </ul>
         <div className="text-center mt-8">
           <p className="text-lg font-medium mb-4">
-            Let us help you claim what&#39;s rightfully yours. Check if you&#39;re owed money today!
+            Let us help you claim what&#39;s rightfully yours{county && ` in ${getCountyName(county,true)}`}.<br/>Check if you&#39;re owed money today!
           </p>
           <Button asChild size="lg">
             <Link href="#contact">Check for Unclaimed Funds</Link>
@@ -55,14 +59,14 @@ const About = ({}: Props) => {
         <div className="space-y-2">
           <p
             className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            At Florida Claim Solutions, we specialize in helping individuals reclaim surplus funds that are
+            At Florida Claim Solutions, we specialize in helping individuals {county ? `in ${getCountyName(county,true)}` : 'across Florida'} reclaim surplus funds that are
             rightfully theirs. Every year, millions of dollars go unclaimed after property sales, foreclosures,
-            and tax overpayments—money that should be in the hands of those who deserve it.
+            and tax overpayments — money that should be in the hands of those who deserve it.
           </p>
           <p
             className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             With years of experience in surplus fund recovery, our team is dedicated to navigating the complex
-            legal process on your behalf, ensuring a smooth and stress-free experience. We work on a no-win,
+            legal process on your behalf {county && `in ${getCountyName(county,true)}`}, ensuring a smooth and stress-free experience. We work on a no-win,
             no-fee basis, meaning you don&#39;t pay anything unless we successfully recover your funds.
           </p>
         </div>

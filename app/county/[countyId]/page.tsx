@@ -18,9 +18,9 @@ const CountyPage = async ({params}: {params: Promise<{ countyId: string}>}) => {
       <Header isMainPage={true}/>
 
       <main className="flex-1">
-        <Hero county={countyId as string}/>
+        <Hero county={countyId}/>
 
-        <About/>
+        <About county={countyId}/>
 
         <HowItWorks/>
 
