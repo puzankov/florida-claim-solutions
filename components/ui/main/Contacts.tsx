@@ -2,10 +2,7 @@ import {CheckCircle, Mail, MapPin, Phone} from "lucide-react";
 import {COMPANY_EMAIL, COMPANY_PHONE, COMPANY_PHONE_LINK} from "@/components/ui/constants";
 import ContactForm from "@/components/ui/main/ContactForm";
 
-interface Props {
-}
-
-const Contacts = ({}: Props) => {
+const Contacts = () => {
   return <section id="contact" className="w-full py-12 md:py-24 bg-muted">
     <div className="container px-4 md:px-6">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
