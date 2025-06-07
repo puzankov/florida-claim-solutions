@@ -22,7 +22,7 @@ const CountyPage = async ({params}: {params: Promise<{ countyId: string}>}) => {
 
         <About county={countyId}/>
 
-        <HowItWorks/>
+        <HowItWorks county={countyId}/>
 
         <Founder/>
 
