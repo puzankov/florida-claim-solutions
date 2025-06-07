@@ -7,6 +7,7 @@ import Testimonials from "@/components/ui/main/Testimonials";
 import FAQ from "@/components/ui/main/FAQ";
 import Contacts from "@/components/ui/main/Contacts";
 import Footer from "@/components/ui/main/Footer";
+import Counties from "@/components/ui/main/Counties";
 
 const CountyPage = async ({params}: {params: Promise<{ countyId: string}>}) => {
 
@@ -24,13 +25,15 @@ const CountyPage = async ({params}: {params: Promise<{ countyId: string}>}) => {
 
         <HowItWorks county={countyId}/>
 
-        <Founder/>
+        <Founder />
 
         <Testimonials/>
 
-        <FAQ/>
+        <FAQ county={countyId}/>
 
         <Contacts/>
+
+        <Counties/>
       </main>
 
       <Footer/>

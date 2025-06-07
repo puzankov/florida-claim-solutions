@@ -1,9 +1,11 @@
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
+import {getCountyName} from "@/components/countiesList";
 
 interface Props {
+  county?: string;
 }
 
-const Faq = ({}: Props) => {
+const Faq = ({county}: Props) => {
   return <section id="faq" className="w-full py-12 md:py-24">
     <div className="container px-4 md:px-6">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -22,41 +24,47 @@ const Faq = ({}: Props) => {
           <AccordionItem value="item-1">
             <AccordionTrigger>How do I know if I&#39;m owed money?</AccordionTrigger>
             <AccordionContent>
-              If your property was sold at a foreclosure auction for more than what was owed on the mortgage and
-              other liens, you may be entitled to the surplus funds. We can conduct a free search to determine if
-              you have unclaimed funds.
+              If your property {county ? `in ${getCountyName(county, true)}` : 'in Florida '} was sold at a
+              foreclosure auction for more than what was owed on the mortgage and other liens, you may be entitled
+              to the surplus funds. We can conduct a <strong>free search</strong> to determine if you have unclaimed funds.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>How long does the recovery process take?</AccordionTrigger>
             <AccordionContent>
-              The timeline varies depending on the complexity of your case and the court&#39;s schedule.
-              Typically,
-              the process takes between 60-120 days from start to finish.
+              The timeline depends on your case and {county ? `${getCountyName(county)} County's` : `county's`} court or clerc schedule —
+              most claims are resolved in <strong>60–120 days</strong>.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>Is there a fee for your services?</AccordionTrigger>
-            <AccordionContent>
-              We work on a contingency basis, which means we only get paid if we successfully recover your funds.
-              Our fee is a percentage of the recovered amount, and there are no upfront costs to you.
+            <AccordionContent className="space-y-2">
+              <p>We work on a contingency basis, which means we only get paid if we successfully recover your funds.</p>
+              <p>Our typical fee is <strong>20% to 25%</strong>, depending on the complexity of your case.</p>
+              <p>If you found us by yourself (through our website or gave us a call), it may even be lower.</p>
+              <p>You never pay anything upfront.</p>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
-            <AccordionTrigger>What areas do you serve?</AccordionTrigger>
+            <AccordionTrigger>{county ? `Do you serve ${getCountyName(county)} County?` : `What areas do you serve?`}</AccordionTrigger>
             <AccordionContent>
-              We currently specialize in surplus funds recovery throughout the state of Florida. Our team is
-              familiar with the specific laws and procedures in all Florida counties.
+              {county ?
+                `Yes — we specialize in surplus recovery across Florida, including ${getCountyName(county, true)}. ` :
+                `We currently specialize in surplus funds recovery throughout the state of Florida. `}
+              Our team is familiar with the specific laws and procedures in <strong>all Florida counties</strong>.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
             <AccordionTrigger>What documents will I need to provide?</AccordionTrigger>
             <AccordionContent>
-              You&#39;ll need to provide identification, proof of ownership of the foreclosed property, and sign
-              our
-              authorization forms. We&#39;ll guide you through exactly what&#39;s needed and help you gather any
-              necessary
-              documentation.
+              We’ll guide you step-by-step. Generally, you’ll need:
+              <ul className="list-disc list-inside py-5">
+                <li>A signed authorization form from us;</li>
+                <li>A copy of your ID;</li>
+                <li>Proof of property ownership (we can help you find this).</li>
+              </ul>
+
+              We handle everything else and help collect missing documents if needed.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
