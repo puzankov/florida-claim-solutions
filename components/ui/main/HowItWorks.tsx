@@ -1,11 +1,13 @@
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {ArrowRight} from "lucide-react";
+import {getCountyName} from "@/components/countiesList";
 
 interface Props {
+  county?: string;
 }
 
-const HowItWorks = ({}: Props) => {
+const HowItWorks = ({county}: Props) => {
   return <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
     <div className="container px-4 md:px-6">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -27,7 +29,7 @@ const HowItWorks = ({}: Props) => {
             <div className="space-y-2 text-center md:text-left">
               <h3 className="text-xl font-bold">Identifying & Confirming Surplus Funds</h3>
               <p className="text-muted-foreground">
-                After a foreclosure or tax deed sale, we review county records to determine if your property was
+                After a foreclosure or tax deed sale, we review {county ? `${getCountyName(county, true)} records` : 'county records throughout Florida'} to determine if your property was
                 sold for more than what was owed. If surplus funds exist, we verify that they are currently being
                 held by the county where the sale took place and are available for you to claim.
               </p>
@@ -72,7 +74,7 @@ const HowItWorks = ({}: Props) => {
             <div className="space-y-2 text-center md:text-left">
               <h3 className="text-xl font-bold">Filing the Claim with the County</h3>
               <p className="text-muted-foreground">
-                Our team prepares and submits all the necessary paperwork to the appropriate county agency,
+                Our team prepares and submits all the necessary paperwork directly to the {county ? `${getCountyName(county, true)}` : 'appropriate county'},
                 ensuring compliance with Florida regulations. We handle all correspondence with county officials
                 and monitor the claim&#39;s progress.
               </p>
@@ -87,7 +89,7 @@ const HowItWorks = ({}: Props) => {
             <div className="space-y-2 text-center md:text-left">
               <h3 className="text-xl font-bold">You Receive Your Money</h3>
               <p className="text-muted-foreground">
-                Once the county processes and approves the claim, they release the surplus funds. We ensure that
+                {county ? `After ${getCountyName(county, true)}` : 'Once the county'} processes and approves the claim, they release the surplus funds. We ensure that
                 you receive your money via direct deposit or check as quickly as possible.
               </p>
             </div>
