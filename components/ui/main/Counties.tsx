@@ -4,8 +4,11 @@ import {countiesIds, getCountyName} from "@/components/countiesList"
 import {useState} from "react";
 import {Input} from "@/components/ui/input";
 
+interface Props {
+  county?: string;
+}
 
-const Counties = () => {
+const Counties = ({county}: Props) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   // Filter counties based on search term
@@ -84,16 +87,18 @@ const Counties = () => {
               {filteredCounties.map((countyId, index) => (
                 <a
                   key={countyId}
-                  className="group relative p-2 rounded-lg border bg-card hover:bg-primary/5 border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg text-left"
+                  className={`group relative p-2 rounded-lg border bg-card hover:bg-primary/5 border-border ${county === countyId ? 'bg-primary/10 border-primary shadow-md scale-105' : 'hover:border-primary/50'} transition-all duration-300 hover:scale-105 hover:shadow-lg text-left`}
                   href={`/county/${countyId}`}
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
-                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300 text-sm">
+                  <h3 className={`font-semibold ${county === countyId ? 'text-primary' : 'text-foreground group-hover:text-primary'} transition-colors duration-300 text-sm`}>
                     {getCountyName(countyId)}
                   </h3>
 
-                  {/* Hover effect overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Hover effect overlay - only show on non-selected items */}
+                  {county !== countyId && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  )}
                 </a>
               ))}
             </div>
