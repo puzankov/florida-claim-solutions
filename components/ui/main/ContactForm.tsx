@@ -37,6 +37,16 @@ const ContactForm = () => {
   const onSubmit: SubmitHandler<Inputs> = async (formData) => {
     setResult("Sending....");
 
+    // Google Analytics: trigger form_submit event when the user submits the ContactForm
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'form_submit', {
+        event_category: 'engagement',
+        event_label: 'ContactForm',
+        form_id: 'contact_form',
+        value: 1,
+      });
+    }
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
