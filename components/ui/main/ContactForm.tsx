@@ -38,8 +38,8 @@ const ContactForm = () => {
     setResult("Sending....");
 
     // Google Analytics: trigger form_submit event when the user submits the ContactForm
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'form_submit', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'form_submit', {
         event_category: 'engagement',
         event_label: 'ContactForm',
         form_id: 'contact_form',
