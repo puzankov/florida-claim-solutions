@@ -30,6 +30,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <script
+          src="https://link.msgsndr.com/js/external-tracking.js"
+          data-tracking-id="tk_e041caf99baf4f99b7ee99764d831ac3"
+        ></script>
         <GoogleAnalytics gaId={GTAG}/>
       </body>
     </html>
