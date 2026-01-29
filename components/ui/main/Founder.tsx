@@ -5,7 +5,7 @@ const Founder = () => {
     <div className="container px-4 md:px-6">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="space-y-2">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meet Sergio Puzankov</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meet Sergi Puzankov</h2>
           <p
             className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Founder of Florida Claim Solutions
@@ -16,7 +16,7 @@ const Founder = () => {
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div className="space-y-4 text-center lg:text-left">
             <p className="text-lg">
-              I&#39;m Sergio Puzankov, the founder of Florida Claim Solutions.
+              I&#39;m Sergi Puzankov, the founder of Florida Claim Solutions.
               I started this company with one goal in mind: to make surplus fund recovery simple, transparent, and
               stress-free. I&#39;ve built a trusted network of legal and financial professionals to ensure every
               claim
@@ -30,7 +30,7 @@ const Founder = () => {
           <div className="flex justify-center lg:justify-start">
             <Image
               src="/images/sergi2.png"
-              alt="Sergio Puzankov, Founder of Florida Claim Solutions"
+              alt="Sergi Puzankov, Founder of Florida Claim Solutions"
               width={350}
               height={377}
               className="rounded-lg shadow-lg object-cover"
