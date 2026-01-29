@@ -4,6 +4,9 @@ import Link from "next/link";
 import {COMPANY_PHONE_LINK,COMPANY_PHONE} from "@/components/ui/constants";
 
 const Footer = () => {
+  const startYear = 2025;
+  const currentYear = new Date().getFullYear();
+  const yearText = currentYear > startYear ? `${startYear} - ${currentYear}` : `${startYear}`;
   return <>
     {/* Footer */}
     <footer className="w-full border-t py-6 md:py-8">
@@ -16,7 +19,7 @@ const Footer = () => {
             <span className="text-lg font-bold">Florida Claim Solutions</span>
           </div>
           <p className="text-xs text-muted-foreground md:text-left">
-            &copy; {new Date().getFullYear()} Marco Concept LLC <br/>d/b/a Florida Claim Solutions. All rights reserved.
+            &copy; {yearText} Marco Concept LLC <br/>d/b/a Florida Claim Solutions. All rights reserved.
           </p>
         </div>
         <div className="flex items-center gap-4 text-primary">
