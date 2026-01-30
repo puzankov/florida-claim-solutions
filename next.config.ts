@@ -12,7 +12,11 @@ const nextConfig: NextConfig = {
         search: '',
       },
     ],
-  }
+  },
+  devIndicators: {
+    appIsrStatus: false,
+    buildActivity: false,
+  },
 };
 
 export default nextConfig;
