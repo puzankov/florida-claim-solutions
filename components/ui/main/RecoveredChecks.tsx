@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, MapPin, FileCheck, DollarSign, User } from "lucide-react";
+import { ArrowRight, MapPin, FileCheck, DollarSign, Scale } from "lucide-react";
 
 interface CheckCase {
   id: number;
@@ -89,10 +89,10 @@ const RecoveredChecks = () => {
                         <div className="flex justify-between items-start">
                           <div className="flex items-center gap-2">
                             <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                              <User className="w-4 h-4 text-blue-400" />
+                              <Scale className="w-4 h-4 text-blue-400" />
                             </div>
-                            <div className="space-y-1">
-                              <div className="h-2 w-24 bg-blue-100 rounded" />
+                            <div className="space-y-0.5">
+                              <div className="text-[10px] font-semibold text-blue-600">Clerk of Circuit Court</div>
                               <div className="h-1.5 w-16 bg-blue-50 rounded" />
                             </div>
                           </div>
@@ -100,7 +100,7 @@ const RecoveredChecks = () => {
                             <div className="h-1.5 w-12 bg-blue-50 rounded mb-1" />
                             <div className="flex items-center gap-1 text-blue-400">
                               <DollarSign className="w-4 h-4" />
-                              <span className="text-sm font-bold group-hover:text-primary transition-colors">???</span>
+                              <span className="text-sm font-bold group-hover:text-primary transition-colors">$$$$$</span>
                             </div>
                           </div>
                         </div>
@@ -144,7 +144,7 @@ const RecoveredChecks = () => {
                   )}
                   {caseItem.isPlaceholder && (
                     <div className="text-sm font-medium text-primary whitespace-nowrap flex items-center gap-1 group-hover:underline">
-                      Check now <ArrowRight className="w-3 h-3" />
+                      Contact Now <ArrowRight className="w-3 h-3" />
                     </div>
                   )}
                 </div>
