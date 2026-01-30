@@ -9,6 +9,7 @@ interface CheckCase {
   claims: number;
   amount: string;
   images: string[];
+  altText?: string;
   isPlaceholder?: boolean;
 }
 
@@ -19,6 +20,7 @@ const cases: CheckCase[] = [
     claims: 3,
     amount: "$98,754.49",
     images: ["/images/check-volusia.png"],
+    altText: "Surplus funds check issued by a Florida county after successful recovery for a former property owner",
   },
   {
     id: 2,
@@ -26,6 +28,7 @@ const cases: CheckCase[] = [
     claims: 2,
     amount: "$30,999.94",
     images: ["/images/check-marion.png"],
+    altText: "Florida county surplus funds check recovered for a client after tax deed sale",
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ const cases: CheckCase[] = [
     claims: 1,
     amount: "$12,343.32",
     images: ["/images/check-hendry.png"],
+    altText: "Real surplus funds check recovered from a Florida county for a client",
   },
   {
     id: 4,
@@ -77,7 +81,7 @@ const RecoveredChecks = () => {
                   {caseItem.images.length > 0 ? (
                     <Image
                       src={caseItem.images[0]}
-                      alt={`Check from ${caseItem.county}`}
+                      alt={caseItem.altText || `Check from ${caseItem.county}`}
                       fill
                       className="object-cover"
                     />
