@@ -125,22 +125,26 @@ const RecoveredChecks = () => {
                   )}
                 </div>
 
-                {/* Card Content - single line */}
+                {/* Card Content */}
                 <div className="flex items-center justify-between gap-4 p-4">
-                  <div className="flex items-center gap-4">
-                    <div className={`text-xl font-bold ${caseItem.isPlaceholder ? "text-blue-600 group-hover:text-primary transition-colors" : "text-primary"}`}>
-                      {caseItem.amount}
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center gap-4">
+                      <div className={`text-xl font-bold ${caseItem.isPlaceholder ? "text-blue-600 group-hover:text-primary transition-colors" : "text-primary"}`}>
+                        {caseItem.amount}
+                      </div>
+                      {!caseItem.isPlaceholder && (
+                        <div className="flex items-center gap-1.5 text-muted-foreground">
+                          <MapPin className="h-4 w-4 flex-shrink-0" />
+                          <span className="text-sm font-medium">{caseItem.county}</span>
+                        </div>
+                      )}
                     </div>
-                    <div className="flex items-center gap-1.5 text-muted-foreground">
-                      <MapPin className="h-4 w-4 flex-shrink-0" />
-                      <span className="text-sm font-medium">{caseItem.county}</span>
-                    </div>
+                    {caseItem.claims > 1 && (
+                      <div className="text-sm text-muted-foreground">
+                        {caseItem.claims} successful claims for our client
+                      </div>
+                    )}
                   </div>
-                  {caseItem.claims > 1 && (
-                    <div className="text-sm text-muted-foreground whitespace-nowrap">
-                      {caseItem.claims} successful claims for our client
-                    </div>
-                  )}
                   {caseItem.isPlaceholder && (
                     <div className="text-sm font-medium text-primary whitespace-nowrap flex items-center gap-1 group-hover:underline">
                       Contact Now <ArrowRight className="w-3 h-3" />
