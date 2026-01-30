@@ -17,28 +17,28 @@ const cases: CheckCase[] = [
     county: "Volusia County",
     claims: 3,
     amount: "$98,754.49",
-    images: ["/images/checks/check-placeholder.jpg"],
+    images: [],
   },
   {
     id: 2,
     county: "Hendry County",
     claims: 1,
     amount: "$12,343.32",
-    images: ["/images/checks/check-placeholder.jpg"],
+    images: ["/images/check-hendry.png"],
   },
   {
     id: 3,
     county: "Marion County",
     claims: 2,
     amount: "$30,999.94",
-    images: ["/images/checks/check-placeholder.jpg"],
+    images: ["/images/check-marion.png"],
   },
   {
     id: 4,
     county: "Coming Soon",
     claims: 0,
     amount: "Your Recovery",
-    images: ["/images/checks/check-placeholder.jpg"],
+    images: [],
   },
 ];
 
@@ -67,19 +67,21 @@ const RecoveredChecks = () => {
             >
               {/* Check Image - aspect ratio similar to a check (approximately 2.5:1) */}
               <div className="relative aspect-[2.5/1] bg-muted">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <FileCheck className="h-10 w-10 mx-auto mb-1 opacity-30" />
-                    <p className="text-sm">Check image</p>
+                {caseItem.images.length > 0 ? (
+                  <Image
+                    src={caseItem.images[0]}
+                    alt={`Check from ${caseItem.county}`}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center text-muted-foreground">
+                      <FileCheck className="h-10 w-10 mx-auto mb-1 opacity-30" />
+                      <p className="text-sm">Check image</p>
+                    </div>
                   </div>
-                </div>
-                {/* Uncomment when images are available */}
-                {/* <Image
-                  src={caseItem.images[0]}
-                  alt={`Check from ${caseItem.county}`}
-                  fill
-                  className="object-cover"
-                /> */}
+                )}
               </div>
 
               {/* Card Content */}
