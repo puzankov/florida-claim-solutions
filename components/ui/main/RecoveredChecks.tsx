@@ -137,9 +137,9 @@ const RecoveredChecks = () => {
                       <span className="text-sm font-medium">{caseItem.county}</span>
                     </div>
                   </div>
-                  {caseItem.claims > 0 && (
+                  {caseItem.claims > 1 && (
                     <div className="text-sm text-muted-foreground whitespace-nowrap">
-                      1 client, {caseItem.claims} {caseItem.claims === 1 ? "claim" : "claims"}
+                      {caseItem.claims} successful claims for our client
                     </div>
                   )}
                   {caseItem.isPlaceholder && (
