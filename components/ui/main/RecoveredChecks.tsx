@@ -70,9 +70,9 @@ const RecoveredChecks = () => {
             
             return (
               <CardWrapper key={caseItem.id} {...cardProps}>
-                {/* Check Image - aspect ratio on mobile, fixed height on desktop */}
+                {/* Check Image - aspect ratio on mobile (taller for first 2), fixed height on desktop */}
                 <div 
-                  className={`relative bg-muted w-full aspect-[2.5/1] ${index < 2 ? "md:aspect-auto md:h-[312px]" : "md:aspect-auto md:h-[200px]"}`}
+                  className={`relative bg-muted w-full ${index < 2 ? "aspect-[4/3] md:aspect-auto md:h-[312px]" : "aspect-[2.5/1] md:aspect-auto md:h-[200px]"}`}
                 >
                   {caseItem.images.length > 0 ? (
                     <Image
