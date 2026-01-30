@@ -17,7 +17,7 @@ const cases: CheckCase[] = [
     county: "Volusia County",
     claims: 3,
     amount: "$98,754.49",
-    images: [],
+    images: ["/images/check-volusia.png"],
   },
   {
     id: 2,
@@ -65,8 +65,11 @@ const RecoveredChecks = () => {
               key={caseItem.id}
               className="flex flex-col rounded-lg border bg-card shadow-sm overflow-hidden transition-shadow hover:shadow-md"
             >
-              {/* Check Image - first row aspect 1.5, second row aspect 2 */}
-              <div className={`relative bg-muted ${index < 2 ? "aspect-[1.5/1]" : "aspect-[2/1]"}`}>
+              {/* Check Image - first row aspect 3/2, second row aspect 2/1 */}
+              <div 
+                className="relative bg-muted"
+                style={{ aspectRatio: index < 2 ? "3/2" : "2/1" }}
+              >
                 {caseItem.images.length > 0 ? (
                   <Image
                     src={caseItem.images[0]}
