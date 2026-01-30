@@ -21,17 +21,17 @@ const cases: CheckCase[] = [
   },
   {
     id: 2,
-    county: "Hendry County",
-    claims: 1,
-    amount: "$12,343.32",
-    images: ["/images/check-hendry.png"],
-  },
-  {
-    id: 3,
     county: "Marion County",
     claims: 2,
     amount: "$30,999.94",
     images: ["/images/check-marion.png"],
+  },
+  {
+    id: 3,
+    county: "Hendry County",
+    claims: 1,
+    amount: "$12,343.32",
+    images: ["/images/check-hendry.png"],
   },
   {
     id: 4,
@@ -60,13 +60,13 @@ const RecoveredChecks = () => {
 
         {/* Cards Grid */}
         <div className="mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2">
-          {cases.map((caseItem) => (
+          {cases.map((caseItem, index) => (
             <div
               key={caseItem.id}
               className="flex flex-col rounded-lg border bg-card shadow-sm overflow-hidden transition-shadow hover:shadow-md"
             >
-              {/* Check Image - aspect ratio similar to a check (approximately 2.5:1) */}
-              <div className="relative aspect-[2.5/1] bg-muted">
+              {/* Check Image - first row aspect 1.5, second row aspect 2 */}
+              <div className={`relative bg-muted ${index < 2 ? "aspect-[1.5/1]" : "aspect-[2/1]"}`}>
                 {caseItem.images.length > 0 ? (
                   <Image
                     src={caseItem.images[0]}
@@ -84,27 +84,24 @@ const RecoveredChecks = () => {
                 )}
               </div>
 
-              {/* Card Content */}
-              <div className="flex flex-col flex-1 p-4 space-y-3">
-                {/* Amount */}
-                <div className="text-2xl font-bold text-primary">
-                  {caseItem.amount}
+              {/* Card Content - single line */}
+              <div className="flex items-center justify-between gap-4 p-4">
+                <div className="flex items-center gap-4">
+                  <div className="text-xl font-bold text-primary">
+                    {caseItem.amount}
+                  </div>
+                  <div className="flex items-center gap-1.5 text-muted-foreground">
+                    <MapPin className="h-4 w-4 flex-shrink-0" />
+                    <span className="text-sm font-medium">{caseItem.county}</span>
+                  </div>
                 </div>
-
-                {/* County */}
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <MapPin className="h-4 w-4 flex-shrink-0" />
-                  <span className="text-sm font-medium">{caseItem.county}</span>
-                </div>
-
-                {/* Claims Count */}
                 {caseItem.claims > 0 && (
-                  <div className="text-sm text-muted-foreground">
-                    {caseItem.claims} {caseItem.claims === 1 ? "claim" : "claims"} recovered
+                  <div className="text-sm text-muted-foreground whitespace-nowrap">
+                    {caseItem.claims} {caseItem.claims === 1 ? "claim" : "claims"}
                   </div>
                 )}
                 {caseItem.claims === 0 && (
-                  <div className="text-sm text-muted-foreground italic">
+                  <div className="text-sm text-muted-foreground italic whitespace-nowrap">
                     Could be you next
                   </div>
                 )}
