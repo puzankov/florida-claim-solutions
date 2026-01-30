@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, MapPin, FileCheck } from "lucide-react";
+import { ArrowRight, MapPin, FileCheck, DollarSign, User } from "lucide-react";
 
 interface CheckCase {
   id: number;
@@ -9,6 +9,7 @@ interface CheckCase {
   claims: number;
   amount: string;
   images: string[];
+  isPlaceholder?: boolean;
 }
 
 const cases: CheckCase[] = [
@@ -35,10 +36,11 @@ const cases: CheckCase[] = [
   },
   {
     id: 4,
-    county: "Coming Soon",
+    county: "Your County",
     claims: 0,
     amount: "Your Recovery",
     images: [],
+    isPlaceholder: true,
   },
 ];
 
@@ -60,57 +62,95 @@ const RecoveredChecks = () => {
 
         {/* Cards Grid */}
         <div className="mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2">
-          {cases.map((caseItem, index) => (
-            <div
-              key={caseItem.id}
-              className="flex flex-col rounded-lg border bg-card shadow-sm overflow-hidden transition-shadow hover:shadow-md"
-            >
-              {/* Check Image - first row aspect 3/2, second row aspect 2/1 */}
-              <div 
-                className="relative bg-muted"
-                style={{ aspectRatio: index < 2 ? "3/2" : "2/1" }}
-              >
-                {caseItem.images.length > 0 ? (
-                  <Image
-                    src={caseItem.images[0]}
-                    alt={`Check from ${caseItem.county}`}
-                    fill
-                    className="object-cover"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-muted-foreground">
-                      <FileCheck className="h-10 w-10 mx-auto mb-1 opacity-30" />
-                      <p className="text-sm">Check image</p>
+          {cases.map((caseItem, index) => {
+            const CardWrapper = caseItem.isPlaceholder ? "a" : "div";
+            const cardProps = caseItem.isPlaceholder 
+              ? { href: "#contact", className: "flex flex-col rounded-lg border bg-card shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-[1.02] cursor-pointer group" }
+              : { className: "flex flex-col rounded-lg border bg-card shadow-sm overflow-hidden transition-shadow hover:shadow-md" };
+            
+            return (
+              <CardWrapper key={caseItem.id} {...cardProps}>
+                {/* Check Image - first row aspect 3/2, second row aspect 2/1 */}
+                <div 
+                  className="relative bg-muted"
+                  style={{ aspectRatio: index < 2 ? "3/2" : "2/1" }}
+                >
+                  {caseItem.images.length > 0 ? (
+                    <Image
+                      src={caseItem.images[0]}
+                      alt={`Check from ${caseItem.county}`}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : caseItem.isPlaceholder ? (
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 flex items-center justify-center">
+                      <div className="relative w-[85%] h-[75%] bg-white rounded-sm shadow-md border border-blue-200 p-4 flex flex-col justify-between">
+                        {/* Check header line */}
+                        <div className="flex justify-between items-start">
+                          <div className="flex items-center gap-2">
+                            <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                              <User className="w-4 h-4 text-blue-400" />
+                            </div>
+                            <div className="space-y-1">
+                              <div className="h-2 w-24 bg-blue-100 rounded" />
+                              <div className="h-1.5 w-16 bg-blue-50 rounded" />
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className="h-1.5 w-12 bg-blue-50 rounded mb-1" />
+                            <div className="flex items-center gap-1 text-blue-400">
+                              <DollarSign className="w-4 h-4" />
+                              <span className="text-sm font-bold group-hover:text-primary transition-colors">???</span>
+                            </div>
+                          </div>
+                        </div>
+                        {/* Check amount line */}
+                        <div className="flex items-center gap-2">
+                          <div className="h-2 w-full bg-blue-50 rounded" />
+                        </div>
+                        {/* Pay to line */}
+                        <div className="space-y-1.5">
+                          <div className="text-[10px] text-blue-300 uppercase tracking-wide">Pay to the order of</div>
+                          <div className="text-sm font-semibold text-blue-600 group-hover:text-primary transition-colors">Your Name Here</div>
+                          <div className="h-1.5 w-32 bg-blue-50 rounded" />
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center text-muted-foreground">
+                        <FileCheck className="h-10 w-10 mx-auto mb-1 opacity-30" />
+                        <p className="text-sm">Check image</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Card Content - single line */}
+                <div className="flex items-center justify-between gap-4 p-4">
+                  <div className="flex items-center gap-4">
+                    <div className={`text-xl font-bold ${caseItem.isPlaceholder ? "text-blue-600 group-hover:text-primary transition-colors" : "text-primary"}`}>
+                      {caseItem.amount}
+                    </div>
+                    <div className="flex items-center gap-1.5 text-muted-foreground">
+                      <MapPin className="h-4 w-4 flex-shrink-0" />
+                      <span className="text-sm font-medium">{caseItem.county}</span>
                     </div>
                   </div>
-                )}
-              </div>
-
-              {/* Card Content - single line */}
-              <div className="flex items-center justify-between gap-4 p-4">
-                <div className="flex items-center gap-4">
-                  <div className="text-xl font-bold text-primary">
-                    {caseItem.amount}
-                  </div>
-                  <div className="flex items-center gap-1.5 text-muted-foreground">
-                    <MapPin className="h-4 w-4 flex-shrink-0" />
-                    <span className="text-sm font-medium">{caseItem.county}</span>
-                  </div>
+                  {caseItem.claims > 0 && (
+                    <div className="text-sm text-muted-foreground whitespace-nowrap">
+                      1 client, {caseItem.claims} {caseItem.claims === 1 ? "claim" : "claims"}
+                    </div>
+                  )}
+                  {caseItem.isPlaceholder && (
+                    <div className="text-sm font-medium text-primary whitespace-nowrap flex items-center gap-1 group-hover:underline">
+                      Check now <ArrowRight className="w-3 h-3" />
+                    </div>
+                  )}
                 </div>
-                {caseItem.claims > 0 && (
-                  <div className="text-sm text-muted-foreground whitespace-nowrap">
-                    {caseItem.claims} {caseItem.claims === 1 ? "claim" : "claims"}
-                  </div>
-                )}
-                {caseItem.claims === 0 && (
-                  <div className="text-sm text-muted-foreground italic whitespace-nowrap">
-                    Could be you next
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
+              </CardWrapper>
+            );
+          })}
         </div>
 
         {/* CTA Block */}
