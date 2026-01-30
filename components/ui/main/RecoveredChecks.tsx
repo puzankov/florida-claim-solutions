@@ -87,7 +87,7 @@ const RecoveredChecks = () => {
                     />
                   ) : caseItem.isPlaceholder ? (
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 flex items-center justify-center">
-                      <div className="relative w-[85%] h-[75%] bg-white rounded-sm shadow-md border border-blue-200 p-4 flex flex-col justify-between">
+                      <div className="relative w-[85%] h-[75%] min-h-[140px] bg-white rounded-sm shadow-md border border-blue-200 p-4 flex flex-col justify-between">
                         {/* Check header line */}
                         <div className="flex justify-between items-start">
                           <div className="flex items-center gap-2">
