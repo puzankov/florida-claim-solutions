@@ -70,10 +70,9 @@ const RecoveredChecks = () => {
             
             return (
               <CardWrapper key={caseItem.id} {...cardProps}>
-                {/* Check Image - first row 312px, second row 200px */}
+                {/* Check Image - aspect ratio on mobile, fixed height on desktop */}
                 <div 
-                  className="relative bg-muted w-full"
-                  style={{ height: index < 2 ? "312px" : "200px" }}
+                  className={`relative bg-muted w-full aspect-[2.5/1] ${index < 2 ? "md:aspect-auto md:h-[312px]" : "md:aspect-auto md:h-[200px]"}`}
                 >
                   {caseItem.images.length > 0 ? (
                     <Image
