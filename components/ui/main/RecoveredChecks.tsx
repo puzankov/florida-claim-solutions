@@ -1,0 +1,136 @@
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ArrowRight, MapPin, FileCheck } from "lucide-react";
+
+interface CheckCase {
+  id: number;
+  county: string;
+  claims: number;
+  amount: string;
+  images: string[];
+}
+
+const cases: CheckCase[] = [
+  {
+    id: 1,
+    county: "Volusia County",
+    claims: 3,
+    amount: "$98,754.49",
+    images: ["/images/checks/check-placeholder.jpg"],
+  },
+  {
+    id: 2,
+    county: "Hendry County",
+    claims: 1,
+    amount: "$12,343.32",
+    images: ["/images/checks/check-placeholder.jpg"],
+  },
+  {
+    id: 3,
+    county: "Marion County",
+    claims: 2,
+    amount: "$30,999.94",
+    images: ["/images/checks/check-placeholder.jpg"],
+  },
+  {
+    id: 4,
+    county: "Coming Soon",
+    claims: 0,
+    amount: "Your Recovery",
+    images: ["/images/checks/check-placeholder.jpg"],
+  },
+];
+
+const RecoveredChecks = () => {
+  return (
+    <section id="recovered-checks" className="w-full py-12 md:py-24 bg-background">
+      <div className="container px-4 md:px-6">
+        {/* Section Header */}
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Real Funds Released by Florida Counties
+            </h2>
+            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Here are a few real examples of checks we recovered from Florida counties for our clients.
+            </p>
+          </div>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="mx-auto grid max-w-6xl gap-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
+          {cases.map((caseItem) => (
+            <div
+              key={caseItem.id}
+              className="flex flex-col rounded-lg border bg-card shadow-sm overflow-hidden transition-shadow hover:shadow-md"
+            >
+              {/* Check Image */}
+              <div className="relative aspect-[4/3] bg-muted">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-muted-foreground">
+                    <FileCheck className="h-12 w-12 mx-auto mb-2 opacity-30" />
+                    <p className="text-sm">Check image</p>
+                  </div>
+                </div>
+                {/* Uncomment when images are available */}
+                {/* <Image
+                  src={caseItem.images[0]}
+                  alt={`Check from ${caseItem.county}`}
+                  fill
+                  className="object-cover"
+                /> */}
+              </div>
+
+              {/* Card Content */}
+              <div className="flex flex-col flex-1 p-4 space-y-3">
+                {/* Amount */}
+                <div className="text-2xl font-bold text-primary">
+                  {caseItem.amount}
+                </div>
+
+                {/* County */}
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <MapPin className="h-4 w-4 flex-shrink-0" />
+                  <span className="text-sm font-medium">{caseItem.county}</span>
+                </div>
+
+                {/* Claims Count */}
+                {caseItem.claims > 0 && (
+                  <div className="text-sm text-muted-foreground">
+                    {caseItem.claims} {caseItem.claims === 1 ? "claim" : "claims"} recovered
+                  </div>
+                )}
+                {caseItem.claims === 0 && (
+                  <div className="text-sm text-muted-foreground italic">
+                    Could be you next
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Block */}
+        <div className="mx-auto max-w-3xl rounded-lg bg-blue-50 p-8 md:p-12 text-center">
+          <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+            You May Still Be Owed Funds
+          </h3>
+          <p className="text-muted-foreground md:text-lg mb-2">
+            If your Florida property was sold at a tax deed or foreclosure auction, the county may still be holding surplus funds in your name.
+          </p>
+          <p className="text-sm text-muted-foreground mb-6">
+            Free consultation. No upfront fees. You only pay if funds are recovered.
+          </p>
+          <Button asChild size="lg">
+            <Link href="#contact">
+              Check My Case for Free <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default RecoveredChecks;
