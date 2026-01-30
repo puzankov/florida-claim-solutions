@@ -59,17 +59,17 @@ const RecoveredChecks = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="mx-auto grid max-w-6xl gap-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2">
           {cases.map((caseItem) => (
             <div
               key={caseItem.id}
               className="flex flex-col rounded-lg border bg-card shadow-sm overflow-hidden transition-shadow hover:shadow-md"
             >
-              {/* Check Image */}
-              <div className="relative aspect-[4/3] bg-muted">
+              {/* Check Image - aspect ratio similar to a check (approximately 2.5:1) */}
+              <div className="relative aspect-[2.5/1] bg-muted">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-muted-foreground">
-                    <FileCheck className="h-12 w-12 mx-auto mb-2 opacity-30" />
+                    <FileCheck className="h-10 w-10 mx-auto mb-1 opacity-30" />
                     <p className="text-sm">Check image</p>
                   </div>
                 </div>
@@ -112,7 +112,7 @@ const RecoveredChecks = () => {
         </div>
 
         {/* CTA Block */}
-        <div className="mx-auto max-w-3xl rounded-lg bg-blue-50 p-8 md:p-12 text-center">
+        <div className="w-full rounded-lg bg-blue-50 p-8 md:p-12 text-center">
           <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">
             You May Still Be Owed Funds
           </h3>
