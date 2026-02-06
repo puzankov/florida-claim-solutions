@@ -48,7 +48,7 @@ const About = ({county}: Props) => {
             We make surplus fund recovery simple, transparent, and risk-free{county ? ` for ${getCountyName(county, true)} residents` : " for homeowners across Florida"}.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
