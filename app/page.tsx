@@ -6,6 +6,7 @@ import About from "@/components/ui/main/About";
 import HowItWorks from "@/components/ui/main/HowItWorks";
 import Founder from "@/components/ui/main/Founder";
 import Testimonials from "@/components/ui/main/Testimonials";
+import RecoveredChecks from "@/components/ui/main/RecoveredChecks";
 import FAQ from "@/components/ui/main/FAQ";
 import Contacts from "@/components/ui/main/Contacts";
 
@@ -25,6 +26,8 @@ export default function Home() {
         <Founder/>
 
         <Testimonials/>
+
+        <RecoveredChecks/>
 
         <FAQ/>
 
