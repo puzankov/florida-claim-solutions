@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import Footer from "@/components/ui/main/Footer";
 import Header from "@/components/ui/main/Header";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {COMPANY_EMAIL} from "@/components/ui/constants";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Florida Claim Solutions",
+  description: "Privacy Policy for Florida Claim Solutions — how we handle your personal data and SMS messaging service.",
+  alternates: {
+    canonical: "https://floridaclaimsolutions.com/privacy",
+  },
+};
 
 const Privacy = () => {
   return <>
@@ -29,7 +38,7 @@ const Privacy = () => {
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Data Usage</h2>
             <p>
-              We use your data solely to communicate via SMS about customer care messages related to Money Claim
+              We use your data solely to communicate via SMS about customer care messages related to Florida Claim
               Solutions services.
             </p>
 

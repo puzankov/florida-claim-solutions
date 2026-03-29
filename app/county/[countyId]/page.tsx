@@ -19,15 +19,42 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `Florida Claim Solutions | Surplus Funds Recovery in ${countyName} of Florida`,
     description: `Florida Claim Solutions helps homeowners recover surplus funds from tax sales and foreclosures in ${countyName} of Florida. No upfront costs. Find out if you're owed money today!`,
+    alternates: {
+      canonical: `https://floridaclaimsolutions.com/county/${countyId}`,
+    },
   }
 }
 
 const CountyPage = async ({params}: Props) => {
 
   const {countyId} = await params;
+  const countyName = getCountyName(countyId, true);
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://floridaclaimsolutions.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": `${countyName} County Surplus Funds Recovery`,
+        "item": `https://floridaclaimsolutions.com/county/${countyId}`
+      }
+    ]
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
       <Header isMainPage={true}/>
 

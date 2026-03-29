@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
 import {CheckCircle, Mail, XCircle} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {COMPANY_EMAIL} from "@/components/ui/constants";
 import Header from "@/components/ui/main/Header";
 import Footer from "@/components/ui/main/Footer";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions | Florida Claim Solutions",
+  description: "Terms and Conditions for Florida Claim Solutions — surplus funds recovery services in Florida.",
+  alternates: {
+    canonical: "https://floridaclaimsolutions.com/terms-and-conditions",
+  },
+};
 
 const TermsAndConditions = () => {
   return <>

@@ -20,6 +20,49 @@ export const metadata: Metadata = {
   description: "Florida Claim Solutions helps homeowners recover surplus funds from tax sales and foreclosures in Florida. No upfront costs. Find out if you're owed money today!",
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://floridaclaimsolutions.com/#business",
+  "name": "Florida Claim Solutions",
+  "legalName": "Marco Concept LLC",
+  "description": "Florida Claim Solutions helps homeowners and individuals recover surplus funds from foreclosure auctions and tax deed sales across all 67 Florida counties. No upfront costs — contingency-based service.",
+  "url": "https://floridaclaimsolutions.com",
+  "telephone": "+12393020917",
+  "email": "info@floridaclaimsolutions.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "12632 East Tamiami Trail #1005",
+    "addressLocality": "Naples",
+    "addressRegion": "FL",
+    "postalCode": "34113",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Florida"
+  },
+  "priceRange": "20%–25% contingency fee, no upfront cost",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://floridaclaimsolutions.com/#founder",
+    "name": "Sergi Puzankov",
+    "jobTitle": "Founder"
+  }
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://floridaclaimsolutions.com/#website",
+  "url": "https://floridaclaimsolutions.com",
+  "name": "Florida Claim Solutions",
+  "description": "Surplus funds recovery for Florida homeowners — no upfront costs.",
+  "publisher": {
+    "@id": "https://floridaclaimsolutions.com/#business"
+  }
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,6 +70,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
