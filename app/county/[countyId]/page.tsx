@@ -8,7 +8,11 @@ import FAQ from "@/components/ui/main/FAQ";
 import Contacts from "@/components/ui/main/Contacts";
 import Footer from "@/components/ui/main/Footer";
 import Counties from "@/components/ui/main/Counties";
-import {getCountyName} from "@/components/countiesList";
+import {getCountyName, countiesIds} from "@/components/countiesList";
+
+export async function generateStaticParams() {
+  return countiesIds.map((countyId) => ({ countyId }));
+}
 
 interface Props {params: Promise<{ countyId: string}>}
 

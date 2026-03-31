@@ -55,6 +55,11 @@ const Footer = () => {
           </Link>
         </nav>
       </div>
+      <div className="container px-4 md:px-6 pb-4">
+        <p className="text-xs text-muted-foreground text-center">
+          Florida Claim Solutions is not a law firm and does not provide legal advice. We are a claims processing service that works with a network of licensed legal professionals to assist clients in recovering surplus funds.
+        </p>
+      </div>
     </footer>
   </>;
 };

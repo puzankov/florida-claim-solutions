@@ -72,7 +72,7 @@ const ContactForm = () => {
     {result && (<div>{result}</div>)}
     <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
       <Input type="hidden" {...register("subject")} value="New Form Submission"/>
-      <Input type="hidden" {...register("access_key")} value="aeac23d8-3bfa-4d27-b670-bff19c9708fe"/>
+      <Input type="hidden" {...register("access_key")} value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY}/>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="space-y-2">
           <label

@@ -18,6 +18,27 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Florida Claim Solutions | Surplus Funds Recovery in Florida",
   description: "Florida Claim Solutions helps homeowners recover surplus funds from tax sales and foreclosures in Florida. No upfront costs. Find out if you're owed money today!",
+  openGraph: {
+    type: "website",
+    url: "https://floridaclaimsolutions.com",
+    siteName: "Florida Claim Solutions",
+    title: "Florida Claim Solutions | Surplus Funds Recovery in Florida",
+    description: "We help homeowners recover surplus funds from foreclosure auctions and tax deed sales across all 67 Florida counties. No upfront costs — contingency-based.",
+    images: [
+      {
+        url: "https://floridaclaimsolutions.com/images/hero.webp",
+        width: 800,
+        height: 489,
+        alt: "Florida Claim Solutions — Surplus Funds Recovery",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Florida Claim Solutions | Surplus Funds Recovery in Florida",
+    description: "We help homeowners recover surplus funds from foreclosure auctions and tax deed sales across all 67 Florida counties. No upfront costs.",
+    images: ["https://floridaclaimsolutions.com/images/hero.webp"],
+  },
 };
 
 const organizationSchema = {
