@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: "We help homeowners recover surplus funds from foreclosure auctions and tax deed sales across all 67 Florida counties. No upfront costs — contingency-based.",
     images: [
       {
-        url: "https://floridaclaimsolutions.com/images/hero.webp",
+        url: "https://floridaclaimsolutions.com/images/hero.jpg",
         width: 800,
         height: 489,
         alt: "Florida Claim Solutions — Surplus Funds Recovery",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Florida Claim Solutions | Surplus Funds Recovery in Florida",
     description: "We help homeowners recover surplus funds from foreclosure auctions and tax deed sales across all 67 Florida counties. No upfront costs.",
-    images: ["https://floridaclaimsolutions.com/images/hero.webp"],
+    images: ["https://floridaclaimsolutions.com/images/hero.jpg"],
   },
 };
 

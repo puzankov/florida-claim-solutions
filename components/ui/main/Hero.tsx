@@ -30,7 +30,7 @@ const Hero = ({county}: Props) => {
           </div>
           <div className="flex items-center justify-center">
             <Image
-              src="/images/hero.webp"
+              src="/images/hero.jpg"
               alt="Money and house model representing surplus funds recovery"
               width={800}
               height={489}
