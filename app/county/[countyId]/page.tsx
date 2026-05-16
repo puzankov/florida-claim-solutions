@@ -75,7 +75,7 @@ const CountyPage = async ({params}: Props) => {
 
         <FAQ county={countyId}/>
 
-        <Contacts/>
+        <Contacts county={countyName}/>
 
         <Counties county={countyId}/>
       </main>

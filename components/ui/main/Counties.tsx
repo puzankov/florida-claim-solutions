@@ -88,7 +88,7 @@ const Counties = ({county}: Props) => {
                 <a
                   key={countyId}
                   className={`group relative p-2 rounded-lg border bg-card hover:bg-primary/5 border-border ${county === countyId ? 'bg-primary/10 border-primary shadow-md scale-105' : 'hover:border-primary/50'} transition-all duration-300 hover:scale-105 hover:shadow-lg text-left`}
-                  href={`/county/${countyId}`}
+                  href={`/county/${countyId}#contact`}
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <h3 className={`font-semibold ${county === countyId ? 'text-primary' : 'text-foreground group-hover:text-primary'} transition-colors duration-300 text-sm`}>

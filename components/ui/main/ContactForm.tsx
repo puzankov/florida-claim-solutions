@@ -16,12 +16,17 @@ type Inputs = {
   message: string;
   subject: string;
   access_key: string;
+  county: string;
   "h-captcha-response": string;
   "opt-in": boolean;
   "opt-in2": boolean;
 }
 
-const ContactForm = () => {
+interface Props {
+  county?: string;
+}
+
+const ContactForm = ({ county }: Props) => {
   const {
     register,
     handleSubmit,
@@ -73,6 +78,7 @@ const ContactForm = () => {
     <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
       <Input type="hidden" {...register("subject")} value="New Form Submission"/>
       <Input type="hidden" {...register("access_key")} value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY}/>
+      {county && <Input type="hidden" {...register("county")} value={county}/>}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="space-y-2">
           <label
