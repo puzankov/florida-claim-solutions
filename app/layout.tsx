@@ -4,6 +4,7 @@ import "./globals.css";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import {GTAG} from "@/components/ui/constants";
 import Script from "next/script";
+import AnimationProvider from "@/components/ui/AnimationProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -104,6 +105,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AnimationProvider />
         {children}
         <Script
           src="https://link.msgsndr.com/js/external-tracking.js"

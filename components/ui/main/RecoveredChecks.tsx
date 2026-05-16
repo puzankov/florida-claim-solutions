@@ -53,13 +53,13 @@ const RecoveredChecks = () => {
     <section id="recovered-checks" className="w-full py-12 md:py-24 bg-background">
       <div className="container px-4 md:px-6">
         {/* Section Header */}
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center" data-animate="fade-up">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Actual Checks Released by Florida Counties
             </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Real examples of surplus funds recovered for our clients.
+              Real examples of surplus funds recovered for our clients:
             </p>
           </div>
         </div>
@@ -72,8 +72,9 @@ const RecoveredChecks = () => {
               ? { href: "#contact", className: "flex flex-col rounded-lg border bg-card shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-[1.02] cursor-pointer group" }
               : { className: "flex flex-col rounded-lg border bg-card shadow-sm overflow-hidden transition-shadow hover:shadow-md" };
             
+            const delay = [0, 80, 160, 240][index] ?? 0;
             return (
-              <CardWrapper key={caseItem.id} {...cardProps}>
+              <CardWrapper key={caseItem.id} {...cardProps} data-animate="scale" data-animate-delay={`${delay}`}>
                 {/* Check Image - aspect ratio on mobile (taller for first 2), fixed height on desktop */}
                 <div 
                   className={`relative bg-muted w-full ${index < 2 ? "aspect-[4/3] md:aspect-auto md:h-[312px]" : "aspect-[2.5/1] min-h-[140px] md:aspect-auto md:h-[200px]"}`}

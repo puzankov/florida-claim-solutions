@@ -10,6 +10,7 @@ import Testimonials from "@/components/ui/main/Testimonials";
 import RecoveredChecks from "@/components/ui/main/RecoveredChecks";
 import FAQ from "@/components/ui/main/FAQ";
 import Contacts from "@/components/ui/main/Contacts";
+import StatsBar from "@/components/ui/main/StatsBar";
 
 export const metadata: Metadata = {
   alternates: {
@@ -76,6 +77,8 @@ export default function Home() {
 
       <main className="flex-1">
         <Hero/>
+
+        <StatsBar/>
 
         <About/>
 

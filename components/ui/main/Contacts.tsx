@@ -5,7 +5,7 @@ import ContactForm from "@/components/ui/main/ContactForm";
 const Contacts = () => {
   return <section id="contact" className="w-full py-12 md:py-24 bg-muted">
     <div className="container px-4 md:px-6">
-      <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <div className="flex flex-col items-center justify-center space-y-4 text-center" data-animate="fade-up">
         <div className="space-y-2">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get Started Today</h2>
           <p
@@ -15,7 +15,7 @@ const Contacts = () => {
         </div>
       </div>
       <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2" data-animate="fade-right">
           <h3 className="text-xl font-bold">Contacts</h3>
           <div className="flex items-center gap-2 text-primary">
             <Phone className="h-5 w-5 text-primary"/>
@@ -65,7 +65,7 @@ const Contacts = () => {
           </div>
 
         </div>
-        <div className="rounded-lg border bg-card p-6 shadow-sm">
+        <div className="rounded-lg border bg-card p-6 shadow-sm" data-animate="fade-left">
           <ContactForm/>
         </div>
       </div>

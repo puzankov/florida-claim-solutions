@@ -8,18 +8,18 @@ interface Props {
 const Faq = ({county}: Props) => {
   return <section id="faq" className="w-full py-12 md:py-24">
     <div className="container px-4 md:px-6">
-      <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <div className="flex flex-col items-center justify-center space-y-4 text-center" data-animate="fade-up">
         <div className="space-y-2">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Frequently Asked Questions
           </h2>
           <p
             className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Get answers to common questions about surplus funds recovery.
+            Get answers to common questions about surplus funds recovery
           </p>
         </div>
       </div>
-      <div className="mx-auto max-w-3xl py-12 text-lg">
+      <div className="mx-auto max-w-3xl py-12 text-lg" data-animate="fade-up" data-animate-delay="100">
         <Accordion type="single" collapsible className="w-full text-lg">
           <AccordionItem value="item-1">
             <AccordionTrigger>How do I know if I&#39;m owed money?</AccordionTrigger>

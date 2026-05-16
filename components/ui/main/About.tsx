@@ -41,20 +41,24 @@ const About = ({county}: Props) => {
     <section id="about" className="w-full pb-12 md:pb-24">
       <div className="container px-4 md:px-6">
         <div className="py-12">
-          <h2 className="text-3xl font-bold text-center tracking-tighter sm:text-4xl md:text-5xl mb-4 text-balance">
-            Why Choose Us?
-          </h2>
-          <p className="text-center text-muted-foreground md:text-lg max-w-2xl mx-auto mb-10">
-            We make surplus fund recovery simple, transparent, and risk-free{county ? ` for ${getCountyName(county, true)} residents` : " for homeowners across Florida"}.
-          </p>
+          <div data-animate="fade-up">
+            <h2 className="text-3xl font-bold text-center tracking-tighter sm:text-4xl md:text-5xl mb-4 text-balance">
+              Why Choose Us?
+            </h2>
+            <p className="text-center text-muted-foreground md:text-lg max-w-2xl mx-auto mb-10">
+              We make surplus fund recovery simple, transparent, and risk-free{county ? ` for ${getCountyName(county, true)} residents` : " for homeowners across Florida"}.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit) => {
+            {benefits.map((benefit, i) => {
               const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="flex flex-col items-center text-center rounded-lg border border-border bg-card p-6 md:p-8"
+                  data-animate="scale"
+                  data-animate-delay={`${i * 80}`}
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground mb-4">
                     <Icon className="h-6 w-6" />
